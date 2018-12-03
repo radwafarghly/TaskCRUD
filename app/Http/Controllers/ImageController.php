@@ -35,8 +35,10 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //
+        //return $request->image;
         $user =auth()->user();
-        $user->addMedia($request->image)->toMediaCollection();
+        $user->addMedia($request->image) 
+            ->toMediaCollection('images');
         return redirect()->back();
     }
 

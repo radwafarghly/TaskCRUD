@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
-class User extends Authenticatable
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+class User extends Authenticatable implements HasMedia
 {
-    use Notifiable;
+    //
+    use Notifiable , HasMediaTrait;
 
     /**
      * The attributes that are mass assignable.

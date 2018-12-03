@@ -23,5 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['middleware' => ['auth']], function() {
-    	Route::resource('users','UserController');
+        Route::resource('users','UserController');
+        Route::view('profile','users.profile')->name('profile');
+        Route::resource('image','ImageController');
 });

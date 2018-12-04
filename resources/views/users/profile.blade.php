@@ -3,18 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
-    <form action="{{ route('image.store') }}" method="post">
+    <form action="{{ route('image.store') }}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
-        <div class="custom-file">
-            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        <div class="form-group">
+            <label class="custom-file-label">Choose file</label>
+            <input type="file" id="image" class="form-control" name="image[]" multiple> 
+            <input type="file" id="image" class="form-control" name="image">    
         </div>
-        <input type="submit" value="Upload" class="btn btn-success ml-4">
-        </div>
+        <input type="submit" value="Upload" class="btn btn-success ">
     </form>
     </div>
 </div>

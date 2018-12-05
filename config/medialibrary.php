@@ -104,7 +104,8 @@ return [
      * The path where to store temporary files while performing image conversions.
      * If set to null, storage_path('medialibrary/temp') will be used.
      */
-    'temporary_directory_path' => storage_path('medialibrary/temp'),
+
+    'temporary_directory_path' => null,
 
     /*
      * FFMPEG & FFProbe binaries path, only used if you try to generate video

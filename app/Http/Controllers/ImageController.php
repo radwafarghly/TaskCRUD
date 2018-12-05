@@ -14,6 +14,8 @@ class ImageController extends Controller
     public function index()
     {
         //
+        $images = auth()->user()->getMedia('images');
+        return view('users.profile',compact('images'));
     }
 
     /**
@@ -40,15 +42,15 @@ class ImageController extends Controller
        // $url="C:\Users\Radwa Ahmed\Downloads/radwa.jpg";
       // $file = $request->image;
        //$imagePath = $file->getClientOriginalName();
-    //    if ($request->hasFile('image')) {
-    //      $user->addMedia($request->image)->toMediaCollection('images');
-    //    }
-       if($request->hasFile('image')){
-            foreach ($request->file('image') as $key => $value) {
-                $user->addMedia($request->image)->toMediaCollection('images');
+       if ($request->hasFile('image')) {
+         $user->addMedia($request->image)->toMediaCollection('images');
+       }
+    //    if($request->hasFile('image')){
+    //         foreach ($request->file('image') as $key => $value) {
+    //             $user->addMedia($request->image)->toMediaCollection('images');
 
-            }
-        }
+    //         }
+    //     }
        return redirect()->back();
 
 

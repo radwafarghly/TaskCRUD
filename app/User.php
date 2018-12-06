@@ -27,4 +27,13 @@ class User extends Authenticatable implements HasMedia
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+ //in V 7 ::;;
+    // public function registerMediaCollections()
+    // {
+    //     $this->addMediaCollection('images');
+    //     // you can define as many collections as needed
+    // // $this->addMediaCollection('my-other-collection');
+        
+    // }
 }

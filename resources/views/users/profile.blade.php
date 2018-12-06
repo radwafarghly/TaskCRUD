@@ -15,7 +15,7 @@
     </div>
      @foreach($images as $image)
       {{$image->getUrl()}}
-       <img class="overlay-img" src="{{asset($image->getUrl())}}"> 
+       <img class="overlay-img" src="{{$image->getUrl()}}"> 
 
      @endforeach 
 </div>

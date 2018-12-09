@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\MediaLibrary\Media;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements HasMediaConversions
 {
     use Notifiable, HasMediaTrait;
 
@@ -36,4 +37,16 @@ class User extends Authenticatable implements HasMedia
     // // $this->addMediaCollection('my-other-collection');
         
     // }
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('card')
+              ->width(368)
+              ->height(232)
+              ->sharpen(10);
+              
+        $this->addMediaConversion('tumb')
+              ->width(100)
+              ->height(100);
+        
+    }
 }

@@ -41,14 +41,13 @@
         @foreach ($chunk as $image)
             <div class="col-xs-4">
                 <div class="card">
-                    <img src="{{$image->getUrl()}}" alt="Image" style="width:100% ; height:">
+                    <img src="{{$image->getUrl('card')}}" alt="Image" style="width:100% ; height:60%">
                         <div class="container">
                             <h4><b>John Doe</b></h4> 
                             <p>Architect & Engineer</p> 
                         </div>
                 </div>     
             </div>
-            <br>
         @endforeach
     </div>
 @endforeach

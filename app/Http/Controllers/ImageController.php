@@ -27,7 +27,7 @@ class ImageController extends Controller
     {
         //
         $user =auth()->user();
-        $user->clearMediaCollection('rr');
+        $user->clearMediaCollection('images');
     }
 
     /**

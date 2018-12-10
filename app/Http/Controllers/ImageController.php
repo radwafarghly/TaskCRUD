@@ -17,7 +17,7 @@ class ImageController extends Controller
         $images = auth()->user()->getMedia('images');
         return view('users.profile',compact('images'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

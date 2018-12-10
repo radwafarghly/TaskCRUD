@@ -40,13 +40,23 @@ class User extends Authenticatable implements HasMediaConversions
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('card')
-              ->width(368)
-              ->height(232)
-              ->sharpen(10);
-              
+              ->width(400)
+              ->height(300);
+                
         $this->addMediaConversion('tumb')
               ->width(100)
               ->height(100);
         
+    }
+
+    public function image()
+    {
+        return $this->hasOne(Media::class, 'id', 'image_id');
+
+    }
+
+    public function getProfileImage()
+    {
+        return $this->image->getUrl('tumb');
     }
 }
